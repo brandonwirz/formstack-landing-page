@@ -133,13 +133,13 @@ img.icons {
 }
 
 .modal-content {
-  margin: 5rem auto;
+  margin: 5rem auto 0;
   display: block;
   width: 80%;
   max-width: 700px;
 }
 
-#caption, #caption2 {
+#caption, #caption2, #caption3, #caption4, #caption5, #caption6 {
   margin: auto;
   display: block;
   width: 80%;
@@ -147,7 +147,6 @@ img.icons {
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
 }
 
 @-webkit-keyframes zoom {
@@ -645,7 +644,7 @@ li.social {
     float: right;
     margin-right: 14rem;
     position: relative;
-    z-index: 105;
+    z-index: 100;
     width: 3.75rem;
   }
 
