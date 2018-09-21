@@ -376,6 +376,10 @@ li.social {
     right: 0%;
   }
 
+  .title-bar {
+    display: none;
+  }
+
   .down-arrow {
     position: relative;
     margin-top: 5.5rem;
@@ -522,6 +526,10 @@ li.social {
 @media screen and (min-width: 64em) {
   .large-margin-collapse > .large-3 {
     width: 33%;
+  }
+
+  .title-bar {
+    display: none;
   }
 
   .navigation {
