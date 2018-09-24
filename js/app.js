@@ -4,7 +4,7 @@ $(document).foundation()
 $(document).ready(function() {
    // scroll to intro
     $('#intro').click(function(){
-        $('html, body').animate({scrollTop: $('#co-skiing').offset().top
+      $('html, body').animate({scrollTop: $('#co-skiing').offset().top
       }, 'slow', 'swing');
     });
     //scroll to photo gallery
@@ -22,7 +22,6 @@ $(document).ready(function() {
         $('html, body').animate({scrollTop: $('#photo-gallery').offset().top
       }, 'slow', 'swing');
     });
-
     // scroll to the intro
     $('#intro-bottom').click(function(){
         $('html, body').animate({scrollTop: $('#co-skiing').offset().top
@@ -38,9 +37,9 @@ $(document).ready(function() {
         $('html, body').animate({scrollTop: $('#contact-form').offset().top
       }, 'fast', 'swing');
     });
-    // scroll to the top
+    //scroll to the top
     // $('#top').click(function(){
-    //     $('html, body').animate({scrollTop: $('grid-container').offset().top
+    //     $('html, body').animate({scrollTop: $('#top-nav').offset().top
     //   }, 'fast', 'swing');
     // });
 });
