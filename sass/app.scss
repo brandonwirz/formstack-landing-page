@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:600');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
+// Begin sass variables and mixins
 $light-blue-hover: #97bae6;
 $font-weight-600: 600;
 $font-lato: 'Lato', sans-serif;
@@ -9,6 +10,33 @@ $pos-relative: relative;
 $pos-absolute: absolute;
 $pos-inline-block: inline-block;
 $pos-block: block;
+@mixin close-modal {
+  position: $pos-absolute;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+@mixin quote {
+  position: $pos-absolute;
+  opacity: 1;
+}
+@mixin footer-top {
+  position: $pos-absolute;
+  background-color: rgba(15, 16, 20, .9);
+  width: 100%;
+  opacity: 0.9;
+  bottom: 0;
+}
+@mixin footer-bottom {
+  display: $pos-inline-block;
+  color: white;
+  margin: 0.5rem auto 0;
+  text-align: center;
+  padding: 0 0.3rem;
+  line-height: 0;
+}
+// end sass varbiables
 
 .title-bar {
   background: #55aae6;
@@ -16,16 +44,20 @@ $pos-block: block;
 
 .is-drilldown li {
   display: $pos-block;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   font-size: 1rem;
   font-family: $font-lato;
   font-weight: $font-weight-600;
   text-transform: $up-case;
 }
 
+li.top-nav a {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
 li.top-nav a:hover {
   color: $light-blue-hover;
-  text-transform: $up-case;
 }
 
 .down-arrow {
@@ -34,30 +66,34 @@ li.top-nav a:hover {
   width: 8.5%;
   cursor: pointer;
 }
+
 .down-arrow:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
-p{
-  font-size: 1em;
+
+p {
+  font-size: 1rem;
   font-family: $font-lato;
   list-style: 1rem;
   width: 70%;
   margin: 2.2px auto;
 }
+
 h1 {
   font-family: 'Oswald', sans-serif;
   text-transform: $up-case;
-  font-size: 2.3em;
+  font-size: 2.3rem;
   font-weight: $font-weight-600;
   padding: 5px 0;
-  color:#222222;
+  color: #222222;
 }
 
 .cell.text-center.h1-head {
   margin-top: 1.75rem;
 }
 
-h1:after, h1:before {
+h1:after,
+h1:before {
   content: ' ';
   display: $pos-block;
   margin: auto;
@@ -93,21 +129,42 @@ p {
 img.icons {
   padding-top: 20px;
 }
-
 /* Start modal */
-#thumb1, #thumb2, #thumb3, #thumb4, #thumb5, #thumb6 {
+#thumb1,
+#thumb2,
+#thumb3,
+#thumb4,
+#thumb5,
+#thumb6 {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   padding: 1rem;
 }
 
-#thumb1:hover {opacity: 0.6;}
-#thumb2:hover {opacity: 0.6;}
-#thumb3:hover {opacity: 0.6;}
-#thumb4:hover {opacity: 0.6;}
-#thumb5:hover {opacity: 0.6;}
-#thumb6:hover {opacity: 0.6;}
+#thumb1:hover {
+  opacity: 0.6;
+}
+
+#thumb2:hover {
+  opacity: 0.6;
+}
+
+#thumb3:hover {
+  opacity: 0.6;
+}
+
+#thumb4:hover {
+  opacity: 0.6;
+}
+
+#thumb5:hover {
+  opacity: 0.6;
+}
+
+#thumb6:hover {
+  opacity: 0.6;
+}
 
 .modal {
   display: none;
@@ -126,11 +183,16 @@ img.icons {
 .modal-content {
   margin: 5rem auto 0;
   display: $pos-block;
-  width: 80%;
+  width: 95%;
   max-width: 700px;
 }
 
-#caption , #caption2, #caption3, #caption4, #caption5, #caption6 {
+#caption,
+#caption2,
+#caption3,
+#caption4,
+#caption5,
+#caption6 {
   margin: auto;
   display: $pos-block;
   width: 80%;
@@ -140,35 +202,29 @@ img.icons {
   padding: 10px 0;
   // height: 150px;
 }
-
-
 @-webkit-keyframes zoom {
   from {
-    -webkit-transform: scale(0)
+    -webkit-transform: scale(0);
   }
+
   to {
-    -webkit-transform: scale(1)
+    -webkit-transform: scale(1);
   }
 }
 
 .close {
-  position: $pos-absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
+  @include close-modal;
+  top: 8rem;
+  right: 0.3rem;
 }
 
-.close:hover,
-.close:focus {
+.close:focus,
+.close:hover {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
 }
 /* End modal */
-
 .quote {
   position: $pos-absolute;
   color: #74dbff;
@@ -184,7 +240,7 @@ img.icons {
 .g-name {
   position: $pos-absolute;
   color: #74dbff;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   z-index: 50;
   top: 134px;
   right: 0;
@@ -193,18 +249,16 @@ img.icons {
 }
 
 div.b-quote {
-  position: $pos-absolute;
+  @include quote;
   top: -1.5rem;
   left: -1rem;
-  opacity: 0.85;
   width: 2rem;
 }
 
 div.s-quote {
-  position: $pos-absolute;
+  @include quote;
   right: -.5rem;
   top: 1.9rem;
-  opacity: 0.85;
   width: 1.7rem;
 }
 
@@ -222,7 +276,7 @@ div.s-quote {
   top: 200px;
   right: 220px;
   color: #74dbff;
-  font-size: 1em;
+  font-size: 1rem;
   top: 6.6rem;
   right: 0;
   left: 0;
@@ -248,8 +302,7 @@ div.s-quote {
   padding: 4.125rem;
 }
 
-.arrow-pointer-down {
-}
+.arrow-pointer-down {}
 
 form {
   margin-top: 2.75rem;
@@ -257,7 +310,7 @@ form {
 
 .form-div {
   background-image: url("../images/mtn-background-form.jpg");
-  margin-top: 0px;
+  margin-top: 0;
   max-width: 100%;
   height: 51rem;
   background-size: cover;
@@ -275,11 +328,10 @@ textarea {
   margin: 0 auto;
   width: 100%;
   background-color: #057fff;
-  ;
 }
 
 footer {
-  margin-top: 0px;
+  margin-top: 0;
   width: 100%;
   height: auto;
   background-size: contain;
@@ -291,12 +343,8 @@ footer {
 }
 
 .footer-top-bar {
-  position: $pos-absolute;
-  background-color: rgba(15, 16, 20, .9);
-  width: 100%;
-  opacity: .9;
+  @include footer-top;
   padding: 2.5rem 0;
-  bottom: 0px;
 }
 
 .footer-bottom-bar {
@@ -309,13 +357,13 @@ footer {
 }
 
 ul {
-  margin-left: 0rem;
+  margin-left: 0;
 }
 
 li.social {
   display: $pos-inline-block;
   width: 2.5rem;
-  padding: 0 0.15rem 0;
+  padding: 0 0.15rem;
 }
 
 .nav-bottom {
@@ -324,13 +372,8 @@ li.social {
 }
 
 .nav-bottom li {
-  display: $pos-inline-block;
-  color: white;
-  margin: .5rem auto 0;
-  text-align: center;
-  padding: 0 .3rem;
-  line-height: 0;
-  font-size: .9em;
+  @include footer-bottom;
+  font-size: 0.9rem;
 }
 
 .gus-photo {
@@ -339,21 +382,20 @@ li.social {
 
 .nav-bottom li a {
   color: white;
-}
-
-.nav-bottom li a {
   display: $pos-inline-block;
   position: $pos-relative;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
 .nav-bottom li a:after {
   content: '';
   display: $pos-block;
-  margin: .7rem auto;
+  margin: 0.7rem auto;
   height: 3px;
-  width: 0px;
+  width: 0;
   background: transparent;
-  transition: width .5s ease, background-color .5s ease;
+  transition: width 0.5s ease, background-color 0.5s ease;
 }
 
 .nav-bottom li a:hover:after {
@@ -365,18 +407,18 @@ li.social {
   color: $light-blue-hover;
   text-transform: $up-case;
 }
-
 @media screen and (min-width:40em) {
   .navigation {
     position: $pos-absolute;
     top: 1rem;
-    left: 0%;
-    right: 0%;
+    left: 0;
+    right: 0;
   }
 
   .title-bar {
-    display:none;
+    display: none;
   }
+
   .down-arrow {
     position: $pos-relative;
     margin-top: 5.5rem;
@@ -399,8 +441,8 @@ li.social {
     list-style-type: none;
     display: $pos-inline-block;
     margin-top: -.5rem;
-    padding: 0 .5rem 0;
-    font-size: .85rem;
+    padding: 0 0.5rem;
+    font-size: 0.85rem;
     font-family: $font-lato;
     font-weight: $font-weight-600;
   }
@@ -415,19 +457,14 @@ li.social {
     display: $pos-block;
     margin: auto;
     height: 3px;
-    width: 0px;
+    width: 0;
     background: transparent;
-    transition: width .5s ease, background-color .5s ease;
+    transition: width 0.5s ease, background-color 0.5s ease;
   }
 
   li.top-nav a:hover:after {
     width: 100%;
     background: $light-blue-hover;
-  }
-
-  li.top-nav a:hover {
-    color: $light-blue-hover;
-    text-transform: $up-case;
   }
 
   .cell.text-center.backing1 {
@@ -442,15 +479,19 @@ li.social {
 
   .cell.text-center.backing2 {
     background-color: #f2f5f7;
-    /* margin-top: 175px; */
     width: 100%;
     height: auto;
     padding-bottom: 5.125rem;
   }
 
+  .close {
+    @include close-modal;
+    top: 2rem;
+    right: 4.2rem;
+  }
+
   .quote-box {
     position: $pos-relative;
-    /* width: 40.1875rem; */
     height: auto;
   }
 
@@ -486,58 +527,47 @@ li.social {
   }
 
   div.b-quote {
-    position: $pos-absolute;
+    @include quote;
     top: -0.5rem;
     left: -2.8rem;
-    opacity: 0.85;
     width: 2.8rem;
   }
 
   div.s-quote {
-    position: $pos-absolute;
+    @include quote;
     right: 1rem;
     top: 4rem;
-    opacity: 0.85;
     width: 1.7rem;
   }
 
   .footer-top-bar {
-    position: $pos-absolute;
-    background-color: rgba(15, 16, 20, .9);
-    width: 100%;
-    opacity: .9;
+    @include footer-top;
     padding: 4.5rem 0;
-    bottom: 0px;
   }
 
   .nav-bottom li {
-    display: $pos-inline-block;
-    color: white;
-    margin: .5rem auto 0;
-    text-align: center;
-    padding: 0 .3rem;
-    line-height: 0;
-    font-size: 1em;
+    @include footer-bottom;
+    font-size: 1rem;
   }
 }
-
 @media screen and (min-width:64em) {
-  .large-margin-collapse>.large-3 {
+  .large-margin-collapse > .large-3 {
     width: 33%;
   }
 
-.title-bar {
-  display:none;
-}
+  .title-bar {
+    display: none;
+  }
+
   .navigation {
     position: $pos-absolute;
     top: 1rem;
-    left: 0%;
-    right: 0%;
+    left: 0;
+    right: 0;
   }
 
   ul.vertical.medium-horizontal.text-center.dropdown {
-    margin-top: 0rem;
+    margin-top: 0;
   }
 
   .top-bar-section ul {
@@ -551,8 +581,8 @@ li.social {
   li.top-nav {
     list-style-type: none;
     display: $pos-inline-block;
-    padding: 0 .5rem 0;
-    font-size: .95em;
+    padding: 0 0.5rem;
+    font-size: 0.95rem;
     font-family: $font-lato;
     font-weight: $font-weight-600;
   }
@@ -567,19 +597,9 @@ li.social {
     display: $pos-block;
     margin: auto;
     height: 3px;
-    width: 0px;
+    width: 0;
     background: transparent;
-    transition: width .5s ease, background-color .5s ease;
-  }
-
-  li.top-nav a:hover:after {
-    width: 100%;
-    background: $light-blue-hover;
-  }
-
-  li.top-nav a:hover {
-    color: $light-blue-hover;
-    text-transform: $up-case;
+    transition: width 0.5s ease, background-color 0.5s ease;
   }
 
   .icons {
@@ -592,10 +612,11 @@ li.social {
   }
 
   div.b-quote {
-    position: $pos-absolute;
+    @include quote;
+    // position: $pos-absolute;
     top: -2.5rem;
     left: -2.8rem;
-    opacity: 0.85;
+    // opacity: 0.85;
     width: 4.5rem;
   }
 
@@ -641,7 +662,7 @@ li.social {
   }
 
   img.thumb {
-    padding: .5rem;
+    padding: 0.5rem;
     width: 21rem;
   }
 
@@ -680,47 +701,23 @@ li.social {
   }
 
   form {
-    margin-top: 2.5rem;
     margin: 2.5rem auto 0;
     width: 50rem;
   }
 
   .footer-top-bar {
-    position: $pos-absolute;
-    background-color: rgba(15, 16, 20, .9);
-    width: 100%;
-    opacity: .9;
+    @include footer-top;
     padding: 7.5rem 0;
-    bottom: 0px;
   }
 
   li.social {
     display: $pos-inline-block;
     width: 3.25rem;
-    padding: 0 0.15rem 0;
-  }
-
-  .nav-bottom li {
-    display: $pos-inline-block;
-    color: white;
-    margin: .5rem auto 0;
-    text-align: center;
-    padding: 0 .3rem;
-    line-height: 0;
-    font-size: 1rem;
-    list-style: none;
-    text-transform: $up-case;
-    font-size: .95rem;
-    font-family: $font-lato;
-    font-weight: $font-weight-600;
-    -webkit-columns: white;
+    padding: 0 0.15rem;
   }
 
   .nav-bottom li a {
     color: white;
-  }
-
-  .nav-bottom li a {
     display: $pos-inline-block;
     position: $pos-relative;
     padding-bottom: 3px;
@@ -729,11 +726,11 @@ li.social {
   .nav-bottom li a:after {
     content: '';
     display: $pos-block;
-    margin: .8rem auto;
+    margin: 0.8rem auto;
     height: 3px;
-    width: 0px;
+    width: 0;
     background: transparent;
-    transition: width .5s ease, background-color .5s ease;
+    transition: width 0.5s ease, background-color 0.5s ease;
   }
 
   .nav-bottom li a:hover:after {
