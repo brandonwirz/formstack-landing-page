@@ -1,7 +1,15 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Oswald:600");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+.grid-container {
+  padding-right: 0rem;
+  padding-left: 0rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
 .title-bar {
-  background: #55aae6;
+  background: #057fff;
 }
 
 .is-drilldown li {
@@ -24,7 +32,7 @@ li.top-nav a:hover {
 
 .down-arrow {
   position: relative;
-  margin-top: 8.5rem;
+  margin-top: 7.5rem;
   width: 8.5%;
   cursor: pointer;
 }
@@ -37,8 +45,13 @@ p {
   font-size: 1rem;
   font-family: "Lato", sans-serif;
   list-style: 1rem;
+  line-height: 1.75rem;
   width: 70%;
-  margin: 2.2px auto;
+  columns: 1 auto;
+  width: 92%;
+  margin: 38px auto;
+  text-align: left;
+  padding: 0 0.1rem 0;
 }
 
 h1 {
@@ -51,7 +64,7 @@ h1 {
 }
 
 .cell.text-center.h1-head {
-  margin-top: 1.75rem;
+  margin-top: 3.75rem;
 }
 
 h1:after,
@@ -65,18 +78,14 @@ h1:before {
 }
 
 .cell.text-center.h1-head-2 {
-  padding-top: 80px;
-}
-
-p {
-  width: 70%;
-  margin: 38px auto;
+  padding-top: 4rem;
 }
 
 .cell.text-center.backing1 {
-  background-color: #f2fdff;
+  background-color: #edf7ff;
   margin-top: -175px;
-  height: 79rem;
+  padding-bottom: 4rem;
+  height:  auto;
 }
 
 .grid-x.grid-margin-x.large-margin-collapse.text-center {
@@ -89,7 +98,7 @@ p {
 }
 
 img.icons {
-  padding-top: 20px;
+  padding-top: 2.2rem;
 }
 
 /* Start modal */
@@ -147,7 +156,7 @@ img.icons {
   margin: 5rem auto 0;
   display: block;
   width: 95%;
-  max-width: 700px;
+  max-width: 850px;
 }
 
 #caption,
@@ -250,16 +259,16 @@ div.s-quote {
   left: 0;
 }
 
-.cell.text-center.backing2 {
-  background-color: #f2f5f7;
-  width: 100%;
-  height: auto;
-  padding-bottom: 5.125rem;
-}
-
 .quote-box {
   position: relative;
   height: auto;
+}
+
+.cell.text-center.backing2 {
+  background-color: #d6e8f9;
+  width: 100%;
+  height: auto;
+  padding-bottom: 5.125rem;
 }
 
 .backing-3 {
@@ -271,18 +280,28 @@ div.s-quote {
 }
 
 form {
+  display: block;
   margin-top: 2.75rem;
+  width: 100%;
 }
 
 .form-div {
   background-image: url("../images/mtn-background-form.jpg");
   margin-top: 0;
   max-width: 100%;
-  height: 51rem;
+  height: auto;
+  padding: 0 10px 110px;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
   position: relative;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  background-color: #057fff;
+  width: 50%;
 }
 
 textarea {
@@ -290,10 +309,8 @@ textarea {
   height: 13rem;
 }
 
-.button {
-  margin: 0 auto;
-  width: 100%;
-  background-color: #057fff;
+input[type=text] {
+  font-size: 0.9rem;
 }
 
 footer {
@@ -319,7 +336,8 @@ footer {
 
 .footer-bottom-bar {
   position: relative;
-  background-color: #0260ab;
+  background-color: #0055ee;
+  background-image: linear-gradient(#0055ee, #2094fa);
   width: 100%;
   color: white;
   text-transform: uppercase;
@@ -443,21 +461,12 @@ li.social {
     background: #97bae6;
   }
 
-  .cell.text-center.backing1 {
-    background-color: #f2fdff;
-    margin-top: -175px;
-    height: 46rem;
-  }
-
   .cell.text-center.h1-head {
-    margin-top: 3.5rem;
+    margin-top: 6.5rem;
   }
 
   .cell.text-center.backing2 {
-    background-color: #f2f5f7;
-    width: 100%;
-    height: auto;
-    padding-bottom: 5.125rem;
+    background-color: #d6e8f9;
   }
 
   .close {
@@ -522,6 +531,18 @@ li.social {
     width: 1.7rem;
   }
 
+  form {
+    margin: 2.5rem auto 0;
+    width: 35rem;
+  }
+
+  .button {
+    display: block;
+    margin: 0 auto;
+    background-color: #057fff;
+    width: 40%;
+  }
+
   .footer-top-bar {
     position: absolute;
     background-color: rgba(15, 16, 20, 0.9);
@@ -555,6 +576,18 @@ li.social {
     top: 1rem;
     left: 0;
     right: 0;
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: "Lato", sans-serif;
+    list-style: 1rem;
+    line-height: 1.75rem;
+    width: 70%;
+    text-align: left;
+    margin: 38px auto;
+    padding: 0 3rem 0;
+    width: 75%;
   }
 
   ul.vertical.medium-horizontal.text-center.dropdown {
@@ -594,12 +627,12 @@ li.social {
   }
 
   .icons {
-    width: 50%;
+    width: 60%;
     z-index: 100;
   }
 
   .cell.text-center.h1-head {
-    margin-top: 3.5rem;
+    margin-top: 5.5rem;
   }
 
   div.b-quote {
@@ -638,17 +671,14 @@ li.social {
     padding-top: 20px;
   }
 
-  .cell.text-center.backing1 {
-    background-color: #f2fdff;
-    margin-top: -175px;
-    height: 44rem;
-  }
-
   .cell.text-center.backing2 {
-    background-color: #f2f5f7;
-    width: 100%;
+    background-image: url("../images/whistler-backing.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
     height: auto;
     padding-bottom: 5.125rem;
+    position: relative;
   }
 
   img.thumb {
@@ -692,7 +722,14 @@ li.social {
 
   form {
     margin: 2.5rem auto 0;
-    width: 50rem;
+    width: 40rem;
+  }
+
+  .button {
+    display: block;
+    margin: 0 auto;
+    background-color: #057fff;
+    width: 35%;
   }
 
   .footer-top-bar {
@@ -712,7 +749,7 @@ li.social {
 
   .nav-bottom li a {
     color: white;
-    display: inline-block;
+    dislay: inline-block;
     position: relative;
     padding-bottom: 3px;
   }
