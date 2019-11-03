@@ -1,4 +1,4 @@
-$(document).foundation()
+// $(document).foundation()
 
 // jQuery scroll to ------------------------------------------------------------
 $(document).ready(function() {
